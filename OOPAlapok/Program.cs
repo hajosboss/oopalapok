@@ -32,6 +32,11 @@ namespace OOPAlapok
             }
         }
 
+        public override string ToString()
+        {
+            return $"A tanuló neve {_nev} életkora {_kor}";
+        }
+
     }
     internal class Program
     {
@@ -39,7 +44,9 @@ namespace OOPAlapok
         {
             Szemely tanulo1 = new Szemely("Kiss Ilona");
             tanulo1.Kor = 34;
-            Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
+
+            Console.WriteLine(tanulo1);
+            //Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
         }
     }
 }
