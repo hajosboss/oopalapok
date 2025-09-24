@@ -7,24 +7,39 @@ namespace OOPAlapok
         private string _nev;
         private int _kor;
 
-        public Szemely(string nev, int kor)
+        public Szemely(string nev)
         {
             _nev = nev;
-            _kor = kor;
+
         }
 
-        public string Kiir()
+        public string Nev
         {
-            return _nev + _kor;
-
+            get { return _nev; }
+            //set { _nev = value; }
         }
+
+        public int Kor
+        {
+            get { return _kor; }
+            set
+            {
+                if (value >= 0)
+                    _kor = value;
+                else
+                    Console.WriteLine("Hibás érték.");
+
+            }
+        }
+
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Szemely tanulo1 = new Szemely("Kiss Ilona", 44);
-            Console.WriteLine(tanulo1.Kiir());
+            Szemely tanulo1 = new Szemely("Kiss Ilona");
+            tanulo1.Kor = 34;
+            Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
         }
     }
 }
