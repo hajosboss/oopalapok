@@ -17,7 +17,6 @@ namespace OOPAlapok
         public string Nev
         {
             get { return _nev; }
-            //set { _nev = value; }
         }
 
         public int Kor
@@ -29,7 +28,6 @@ namespace OOPAlapok
                     _kor = value;
                 else
                     Console.WriteLine("Hibás érték.");
-
             }
         }
 
@@ -38,6 +36,10 @@ namespace OOPAlapok
             return $"A tanuló neve {_nev} életkora {_kor}";
         }
 
+        public virtual string Bemutatkozik()
+        {
+            return $"Személy vagyok. Nevem: {_nev}, korom: {_kor}";
+        }
     }
 
     class BankSzamla
@@ -70,7 +72,7 @@ namespace OOPAlapok
     }
 
     class Hallgato : Szemely
-    {   
+    {
         private string _neptunkod;
         public string Neptunkod
         {
@@ -81,14 +83,45 @@ namespace OOPAlapok
                 {
                     _neptunkod = value;
                 }
-               
             }
         }
         public Hallgato(string nev, int kor) : base(nev, kor)
         {
 
         }
+
+        public override string Bemutatkozik()
+        {
+            return $"Hallgató vagyok. Nevem: {Nev}, korom: {Kor}, Neptun kódom: {Neptunkod}";
+        }
     }
+
+    class Dolgozo : Szemely
+    {
+        private int _ber;
+        public int Ber
+        {
+            get { return _ber; }
+            set
+            {
+                if (value >= 0)
+                    _ber = value;
+                else
+                    Console.WriteLine("A bér nem lehet negatív.");
+            }
+        }
+
+        public Dolgozo(string nev, int kor, int ber) : base(nev, kor)
+        {
+            Ber = ber;
+        }
+
+        public override string Bemutatkozik()
+        {
+            return $"Dolgozó vagyok. Nevem: {Nev}, korom: {Kor}, Bérem: {Ber} Ft";
+        }
+    }
+
     internal class Program
     {
         static void Main(string[] args)
@@ -96,7 +129,6 @@ namespace OOPAlapok
             Szemely tanulo1 = new Szemely("Kiss Ilona", 34);
 
             Console.WriteLine(tanulo1);
-            //Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
             List<Hallgato> hallgatolista = new List<Hallgato>();
 
             for (int i = 0; i < 2; i++)
@@ -111,13 +143,16 @@ namespace OOPAlapok
                 tanulo.Neptunkod = neptunkod;
 
                 hallgatolista.Add(tanulo);
-
             }
+
             foreach (var item in hallgatolista)
             {
-                Console.WriteLine($"{ item.Nev} {item.Kor} {item.Neptunkod}");
+                Console.WriteLine(item.Bemutatkozik());
             }
 
+            // Példa Dolgozo használatára
+            Dolgozo dolgozo1 = new Dolgozo("Nagy Béla", 45, 350000);
+            Console.WriteLine(dolgozo1.Bemutatkozik());
         }
-        }
+    }
 }
