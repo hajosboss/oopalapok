@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOPAlapok
 {
@@ -69,11 +70,23 @@ namespace OOPAlapok
     }
 
     class Hallgato : Szemely
-    {
+    {   
         private string _neptunkod;
-        public Hallgato(string nev, int kor, string neptunkod) : base(nev, kor)
+        public string Neptunkod
         {
-            _neptunkod = neptunkod;
+            get { return _neptunkod; }
+            set
+            {
+                if (value.Length == 6)
+                {
+                    _neptunkod = value;
+                }
+               
+            }
+        }
+        public Hallgato(string nev, int kor) : base(nev, kor)
+        {
+
         }
     }
     internal class Program
@@ -84,6 +97,27 @@ namespace OOPAlapok
 
             Console.WriteLine(tanulo1);
             //Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
+            List<Hallgato> hallgatolista = new List<Hallgato>();
+
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write($"kerem {i + 1} tanulo nev:");
+                string nev = Console.ReadLine();
+                Console.Write($"kerem {i + 1} tanulo eletkorat");
+                int kor = int.Parse(Console.ReadLine());
+                Hallgato tanulo = new Hallgato(nev, kor);
+                Console.Write($"kerem {i + 1} tanulo neptunkodjat:");
+                string neptunkod = Console.ReadLine();
+                tanulo.Neptunkod = neptunkod;
+
+                hallgatolista.Add(tanulo);
+
+            }
+            foreach (var item in hallgatolista)
+            {
+                Console.WriteLine($"{ item.Nev} {item.Kor} {item.Neptunkod}");
+            }
+
         }
-    }
+        }
 }

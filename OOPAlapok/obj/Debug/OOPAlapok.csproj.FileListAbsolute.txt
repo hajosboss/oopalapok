@@ -6,3 +6,10 @@ D:\Desktop\12BSzoftTest\OOPAlapok\OOPAlapok\obj\Debug\OOPAlapok.csproj.CoreCompi
 D:\Desktop\12BSzoftTest\OOPAlapok\OOPAlapok\obj\Debug\OOPAlapok.exe
 D:\Desktop\12BSzoftTest\OOPAlapok\OOPAlapok\obj\Debug\OOPAlapok.pdb
 D:\Desktop\12BSzoftTest\OOPAlapok\OOPAlapok\obj\Debug\OOPAlapok.exe.config
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\bin\Debug\OOPAlapok.exe.config
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\bin\Debug\OOPAlapok.exe
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\bin\Debug\OOPAlapok.pdb
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\obj\Debug\OOPAlapok.csproj.AssemblyReference.cache
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\obj\Debug\OOPAlapok.csproj.CoreCompileInputs.cache
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\obj\Debug\OOPAlapok.exe
+C:\Users\hajosbb\source\repos\oopalapok\OOPAlapok\obj\Debug\OOPAlapok.pdb
