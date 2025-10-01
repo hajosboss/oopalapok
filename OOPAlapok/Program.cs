@@ -4,13 +4,13 @@ namespace OOPAlapok
 {
     public class Szemely
     {
-        private string _nev;
-        private int _kor;
+        protected string _nev;
+        protected int _kor;
 
-        public Szemely(string nev)
+        public Szemely(string nev, int kor)
         {
             _nev = nev;
-
+            _kor = kor;
         }
 
         public string Nev
@@ -67,12 +67,20 @@ namespace OOPAlapok
 
         }
     }
+
+    class Hallgato : Szemely
+    {
+        private string _neptunkod;
+        public Hallgato(string nev, int kor, string neptunkod) : base(nev, kor)
+        {
+            _neptunkod = neptunkod;
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Szemely tanulo1 = new Szemely("Kiss Ilona");
-            tanulo1.Kor = 34;
+            Szemely tanulo1 = new Szemely("Kiss Ilona", 34);
 
             Console.WriteLine(tanulo1);
             //Console.WriteLine(tanulo1.Nev + tanulo1.Kor);
