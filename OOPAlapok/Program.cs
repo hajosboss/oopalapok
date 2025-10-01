@@ -38,6 +38,35 @@ namespace OOPAlapok
         }
 
     }
+
+    class BankSzamla
+    {
+        private int _egyenleg;
+
+        public int Egyenleg
+        {
+            set
+            {
+                if (value >= 0)
+                {
+                    _egyenleg = value;
+                }
+                else
+                {
+                    Console.WriteLine("Az egyenleg nem lehet kisebb 0-nál.");
+                }
+            }
+        }
+        public void Betesz()
+        {
+
+        }
+
+        public void Kivesz()
+        {
+
+        }
+    }
     internal class Program
     {
         static void Main(string[] args)
